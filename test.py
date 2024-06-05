@@ -8,3 +8,7 @@ def printAll():
     print (name)
     print (age)
 
+
+
+
+getData()
