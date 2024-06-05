@@ -1,20 +1,10 @@
-/Users/meet/Desktop/Coding/~Coding_Janauary2023_till_/harkiratTut/training
-events {
-    # Event directives...
-}
+def getData ():
+    global name,age
+    name = input ("enter  your name ")
+    age = input ("enter your roll no")
+    printAll()
 
-http {
-	server {
-    listen 80;
-    server_name ec2-13-233-244-202.ap-south-1.compute.amazonaws.com;
+def printAll():
+    print (name)
+    print (age)
 
-    location / {
-        proxy_pass http://localhost:8080;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host $host;
-        proxy_cache_bypass $http_upgrade;
-    }
-	}
-}
