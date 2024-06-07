@@ -367,6 +367,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
 mKeys = ('name', 'age', 'score')
 
 data_list = []
@@ -381,14 +391,14 @@ def get_input(prompt, key):
                 if value.isnumeric():
                     return int(value)
                 else:
-                    raise ValueError("Non-numerical data provided for a numerical field.")
+                    raise ValueError("Non-numerical.")
             else:
                 return value
         except ValueError as e:
             print(e)
 
 def main():
-    print("Enter data for the following fields. Type 'save&exit' to quit.")
+    print("Enter data / save&exit")
     while True:
         data_dict = {}
         for key in mKeys:
@@ -409,3 +419,26 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+key = ('name','age', 'score')
+mdict = dict.fromkeys (key)
+print(mdict)
+
