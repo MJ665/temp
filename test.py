@@ -442,3 +442,23 @@ key = ('name','age', 'score')
 mdict = dict.fromkeys (key)
 print(mdict)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import testpack.mypack as xyz 
+ print (xyz.name )
+ xyz.greet ()
+ 
