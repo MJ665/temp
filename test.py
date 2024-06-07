@@ -366,18 +366,16 @@
 
 
 
-
 mKeys = ('name', 'age', 'score')
 
-# Initialize an empty list to store dictionaries
 data_list = []
 
 def get_input(prompt, key):
     while True:
+        value = input(prompt)
+        if value.lower() == 'save&exit':
+            return value
         try:
-            value = input(prompt)
-            if value.lower() == 'save&exit':
-                return value
             if key == 'age' or key == 'score':
                 if value.isnumeric():
                     return int(value)
@@ -394,7 +392,7 @@ def main():
         data_dict = {}
         for key in mKeys:
             value = get_input(f"Enter {key}: ", key)
-            if value == 'save&exit':
+            if value.lower() == 'save&exit':
                 print("\nCollected Data:")
                 for entry in data_list:
                     print(entry)
@@ -404,7 +402,6 @@ def main():
         data_list.append(data_dict)
         print("Data saved. You can continue entering or type 'save&exit' to quit.")
     
-    # Print the collected data
     print("\nCollected Data:")
     for entry in data_list:
         print(entry)
