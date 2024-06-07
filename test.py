@@ -369,7 +369,6 @@
 
 mKeys = ('name', 'age', 'score')
 
-# Initialize an empty list to store dictionaries
 data_list = []
 
 def get_input(prompt, key):
@@ -404,7 +403,6 @@ def main():
         data_list.append(data_dict)
         print("Data saved. You can continue entering or type 'save&exit' to quit.")
     
-    # Print the collected data
     print("\nCollected Data:")
     for entry in data_list:
         print(entry)
