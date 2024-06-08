@@ -472,13 +472,13 @@
     
 
 
-import os
 
-def getData ():
-    try:
-        os.remove ('students.txt')
-    except FileNotFoundError:
-        
+
+
+
+
+
+
 
 
 
