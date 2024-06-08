@@ -43,8 +43,8 @@ def add_entry():
             raise Exception("Invalid Age!")
     except ValueError:
         print(question_bank["invalid_input"])
-    except:
-        print(question_bank["invalid_age"])
+    except Exception as e:
+        print(str(e))
     else:
         students.append(student)
     finally:
@@ -54,16 +54,16 @@ def save_data():
     try:
         with open("students.txt", 'w') as the_file:
             json.dump(students, the_file)
-    except:
-        print(question_bank["error_saving_file"])
+    except Exception as e:
+        print(f"{question_bank['error_saving_file']}: {str(e)}")
 
 def load_data():
     global students
     try:
         with open("students.txt", 'r') as the_file:
             students = json.load(the_file)
-    except:
-        print(question_bank["error_loading_file"])
+    except Exception as e:
+        print(f"{question_bank['error_loading_file']}: {str(e)}")
     else:
         print_list(students)
 
@@ -81,24 +81,25 @@ def search_student():
     print_list(filtlist)
 
 def get_data():
-    print(question_bank["menu"])
-    my_inp = userinput.getInt(question_bank["option_prompt"])
+    while True:
+        print(question_bank["menu"])
+        my_inp = userinput.getInt(question_bank["option_prompt"])
 
-    if my_inp == 0:
-        print(question_bank["bye"])
-        return
-    elif my_inp == 1:
-        add_entry()
-    elif my_inp == 2:
-        save_data()
-    elif my_inp == 3:
-        load_data()
-    elif my_inp == 4:
-        delete_data()
-    elif my_inp == 5:
-        search_student()
-    
-    get_data()
+        if my_inp == 0:
+            print(question_bank["bye"])
+            break
+        elif my_inp == 1:
+            add_entry()
+        elif my_inp == 2:
+            save_data()
+        elif my_inp == 3:
+            load_data()
+        elif my_inp == 4:
+            delete_data()
+        elif my_inp == 5:
+            search_student()
+        else:
+            print("Invalid option, please try again.")
 
-# Called the function
+# Call the function to start the program
 get_data()
