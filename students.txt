@@ -1,1 +1,1 @@
-[{'name': 'Sheldon', 'age': 28, 'score': 89}, {'name': 'Leonard', 'age': 27, 'score': 88}, {'name': 'Raj', 'age': 29, 'score': 98}]
+[{'name': 'ayush', 'age': 28, 'score': 38}]
