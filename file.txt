@@ -1,2 +1,0 @@
-Student data added: {'name': 'qwewek', 'age': 12, 'score': 34}
-Student data added: {'name': 'waasaa', 'age': 12, 'score': 23}
