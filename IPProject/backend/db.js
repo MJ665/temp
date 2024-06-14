@@ -12,9 +12,11 @@ mongoose.connect(myMongoUrl).then(() => {
     console.error("Error connecting to MongoDB:", error);
 });
 const todoSchema = mongoose.Schema({
-    title:String,
-    description:String,
-    completed:Boolean
+    title: String,
+    description: String,
+    completed: Boolean,
+    priority: { type: String, enum: ['low', 'medium', 'high'], default: 'low' }, // Add priority field
+
 })
 const todo = mongoose.model("todo",todoSchema)
 

@@ -45,7 +45,6 @@
 
 
 // porper older code had infinite server request is going in the fetch call solved by gpt
-
 import { useState, useEffect } from 'react';
 import { CreateTodo } from './components/CreateTodo';
 import { Todos } from './components/Todos';
@@ -53,6 +52,8 @@ import './App.css';
 
 function App() {
   const [todos, setTodos] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -61,29 +62,28 @@ function App() {
         const data = await response.json();
         setTodos(data.todos);
       } catch (error) {
+        setError('Error fetching todos');
         console.error('Error fetching todos:', error);
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchData();
-  }, []); // Empty dependency array ensures this effect runs only once on mount
+  }, []);
 
   return (
     <div>
-      <CreateTodo />
-      <Todos
-        todos={[
-          { title: '1', description: '11', completed: true },
-          { title: '2', description: '22', completed: false }
-        ]}
-      />
-      <Todos todos={todos} />
-      hi there
+      <CreateTodo setTodos={setTodos} />
+      {loading ? (
+        <p>Loading...</p>
+      ) : error ? (
+        <p>{error}</p>
+      ) : (
+        <Todos todos={todos} setTodos={setTodos} />
+      )}
     </div>
   );
 }
 
 export default App;
-
-
-// Hence we have finally completed the todo application?
