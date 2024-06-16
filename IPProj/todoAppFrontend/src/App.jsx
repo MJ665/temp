@@ -28,7 +28,7 @@ function App() {
   }, [priority]);
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="bg-gradient-to-r from-green-400 to-blue-500  container mx-auto p-4">
       <Navbar>. </Navbar>
       <br />
       <CreateTodo onTodoCreated={() => fetchData(priority)} />

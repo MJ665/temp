@@ -5,7 +5,7 @@ import Logo from '../assets/logo.jpeg';
 
 export function Navbar() {
   return (
-    <nav className="bg-blue-400 border   rounded-3xl p-4 shadow-md">
+    <nav className="bg-gradient-to-r from-pink-500 to-yellow-500 border   rounded-3xl p-4 shadow-md">
       <div className="container mx-auto flex justify-center  items-center">
 
 

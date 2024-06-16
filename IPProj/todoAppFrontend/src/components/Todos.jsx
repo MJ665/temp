@@ -62,8 +62,9 @@ export function Todos({ todos, onTodoUpdated }) {
           <h5 className="text-sm">Date Added: {new Date(todo.dateAdded).toLocaleDateString()}</h5>
           <h5 className="text-sm">Deadline: {new Date(todo.deadline).toLocaleDateString()}</h5>
           {!todo.completed && (
+              //   className="p-2 m-2 bg-green-500 text-white rounded"
             <button 
-              className="p-2 m-2 bg-green-500 text-white rounded"
+              className="p-2 m-2 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500  rounded"
               onClick={() => handleComplete(todo._id)}
             >
               Mark as Completed
